@@ -31,8 +31,5 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
         "members",
     ]
 
-    def get_success_url(self, **kwargs):
-        if kwargs is not None:
-            return reverse_lazy("show_project", kwargs={"pk": self.object.pk})
-        else:
-            return reverse_lazy("show_project", args=(self.object.id))
+    def get_success_url(self) -> str:
+        return reverse_lazy("show_project", args=[self.object.id])
