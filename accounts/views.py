@@ -22,7 +22,7 @@ def signup(request):
                 )
                 user.save()
                 login(request, user)
-                return redirect("/")
+                return redirect("home")
 
     else:
         form = UserCreationForm(request.POST)
