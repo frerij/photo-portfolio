@@ -1,27 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
 <div>
-    <p>
-        <a href="{% url 'create_project' %}">Create a new project</a>
-    </p>
-    {% if project_list.count == 0 %}
-    <p class="body-text">There is no content for this page yet</p>
-    {% elif project_list.count != 0 %}
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Number of tasks</th>
-        </thead>
-        <tbody>
-            {% for project in project_list %}
-            <tr>
-                <td><a href="{% url 'show_project' project.id %}">{{ project.name }}</td>
-                <td>{{ project.tasks.count }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endif %}
+    <img src="{% static 'projects/assets/images/about.jpg' %}" alt="picture of me">
+
 </div>
 {% endblock content %}

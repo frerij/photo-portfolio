@@ -1,37 +1,26 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
-<div>
+{% block content %}
 
-    {% if task_list.count != 0 %}
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>Is completed</th>
-        </thead>
-        <tbody>
-            {% for task in task_list %}
-            <tr>
-                <td>{{ task.name }}</td>
-                <td>{{ task.start_date }}</td>
-                <td>{{ task.due_date }}</td>
-                <td>
-                    {% if task.is_completed == False %}
-                    <form method="post" action="{% url 'complete_task' task.id %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="is_completed" value="True" />
-                        <button>Complete</button>
-                    </form>
-                    {% else %} {{ task.is_completed|yesno:"Done, " }} {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% elif task_list.count == 0 %}
-    <p class="body-text">No collections to display yet</p>
-    {% endif %}
+<div class="covers">
+    <div class="img_wrap">
+        <img src="{% static 'projects/assets/images/oregon/rock2.jpg' %}" alt="another picture">
+        <p class="cover_title">Oregon Coast</p>
+    </div>
+    <div class="img_wrap">
+        <img src="{% static 'projects/assets/images/ocean/reflection.jpg' %}" alt="a picture">
+        <p class="cover_title">Ocean</p>
+    </div>
+    <div class="img_wrap">
+        <img src="{% static 'projects/assets/images/macro/soft_flowers.JPG' %}" alt="picture">
+        <p class="cover_title">Macro</p>
+    </div>
+    <div class="img_wrap">
+        <img src="{% static 'projects/assets/images/washington/lake.jpg' %}" alt="picture">
+        <p class="cover_title">Washington</p>
+    </div>
+
 </div>
 
 {% endblock content %}

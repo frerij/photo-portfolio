@@ -15,14 +15,6 @@
 }
 
 @font-face {
-    font-family: 'aaarghnormal';
-    src: url('./assets/fonts/aaargh-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
     font-family: 'raleway';
     src: url('./assets/fonts/raleway-bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -76,6 +68,50 @@ footer {
     text-align: center;
 }
 
+div img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin: 2em;
+
+    display: inline-block;
+    transition: 0.5s ease-in-out;
+}
+
+/* .img_wrap {
+    position: relative;
+    width: 400px;
+    height: 400px;
+ } */
+
+.cover_title {
+    color: black;
+    font-family: 'kenokylight';
+}
+
+/* position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+
+
+    transition: opacity .2s, visibility .2s;
+}
+
+.img_wrap:hover .cover_title {
+    visibility: visible;
+    opacity: 1;
+} */
+/* img:hover {
+    backdrop-filter: blur(10px);
+    filter: blur(4px);
+    transition: 0.5s ease-in-out;
+} */
+
 
 table,
 a {
@@ -90,7 +126,7 @@ ul {
 }
 
 a:hover {
-    color: #99ccff;
+    color: #b3c4cb;
     transition: color 0.3s;
 }
 
@@ -121,6 +157,6 @@ nav {
 }
 
 .nav-item a.active {
-    color: #99ccff;
+    color: #b3c4cb;
     text-decoration: line-through;
 }
