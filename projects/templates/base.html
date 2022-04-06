@@ -2,30 +2,48 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tracker</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    {% if user.is_authenticated %}
-                        <li> <a href="{% url 'show_my_tasks' %}">My tasks</a></li>
-                        <li> <a href="{% url 'list_projects' %}">My projects</a></li>
-                        <li> <a href="{% url 'logout' %}">Logout</a></li>
-                    {% else %}
-                        <li> <a href="{% url 'login' %}">Login</a></li>
-                        <li> <a href="{% url 'signup' %}">Signup</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-        </header>
-        <main>
-            {% block content %}
-            {% endblock content %}
-        </main>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'projects/styles.css' %}">
+    <title>Gallery Alpha</title>
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar">
+            <h1>Here onward</h1>
+            <ul class="nav-links">
+                {% if user.is_authenticated %}
+                {% url 'show_my_tasks' as collections_url %}
+                {% url 'list_projects' as about_url %}
+                {% url 'login' as login_url %}
+                {% url 'signup' as signup_url %}
+                <li class="nav-item"> <a href="{% url 'show_my_tasks' %}"{% if request.path == collections_url %} class="active"{% endif %}>Collections</a></li>
+                <li class="nav-item"> <a href="{% url 'list_projects' %}"{% if request.path == about_url %} class="active"{% endif %}>About</a></li>
+                <li class="nav-item"> <a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"> <a href="{% url 'login' %}"{% if request.path == login_url %} class="active"{% endif %}>Login</a></li>
+                <li class="nav-item"> <a href="{% url 'signup' %}"{% if request.path == signup_url %} class="active"{% endif %}>Signup</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+</body>
+<footer>
+    <div>
+        <p>
+            Thanks for visiting
+        </p>
+    </div>
+</footer>
+
 </html>

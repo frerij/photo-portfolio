@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'coffekanregular';
+    src: url('./assets/fonts/coffekanregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kenokylight';
+    src: url('./assets/fonts/kenokylight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'aaarghnormal';
+    src: url('./assets/fonts/aaargh-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./assets/fonts/raleway-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./assets/fonts/raleway-light-webfont.woff') format('woff');
+    font-weight: light;
+    font-style: normal;
+
+}
+
+
+html,
+body {
+    background-color: white;
+
+}
+
+
+h1 {
+    color: black;
+    font-family: 'kenokylight';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 6rem;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+h2 {
+    color: black;
+    font-family: 'kenokylight';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'kenokylight';
+    text-align: center;
+}
+
+
+table,
+a {
+    font-family: 'raleway';
+
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:hover {
+    color: #99ccff;
+    transition: color 0.3s;
+}
+
+nav {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item a {
+    font-family: 'kenokylight';
+    font-size: 2.25rem;
+    text-decoration: none;
+    transition: color 0.5s;
+
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.nav-item a.active {
+    color: #99ccff;
+    text-decoration: line-through;
+}
