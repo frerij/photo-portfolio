@@ -1,36 +1,37 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
-from tasks.models import Task
+from tasks.models import Image
 
 # Create your views here.
 
 
-class TaskCreateView(LoginRequiredMixin, CreateView):
-    model = Task
+class ImageCreateView(LoginRequiredMixin, CreateView):
+    model = Image
     template_name = "tasks/create.html"
     fields = [
-        "name",
-        "start_date",
-        "due_date",
-        "project",
-        "assignee",
+        "title",
+        "date_taken",
+        "img_link",
+        "description",
+        "collection",
+        "photographer",
     ]
 
     def get_success_url(self) -> str:
         return reverse_lazy("show_project", args=[self.object.project.id])
 
 
-class TaskListView(LoginRequiredMixin, ListView):
-    model = Task
+class ImageListView(LoginRequiredMixin, ListView):
+    model = Image
     template_name = "tasks/list.html"
 
     def get_queryset(self):
-        return Task.objects.filter(assignee=self.request.user)
+        return Image.objects.filter(assignee=self.request.user)
 
 
-class TaskUpdateView(LoginRequiredMixin, UpdateView):
-    model = Task
+class ImageUpdateView(LoginRequiredMixin, UpdateView):
+    model = Image
     template_name = "tasks/edit.html"
     fields = ["is_completed"]
 

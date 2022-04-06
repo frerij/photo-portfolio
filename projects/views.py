@@ -1,34 +1,33 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
-from projects.models import Project
+from projects.models import Collection
 
 # Create your views here.
 
 
-class ProjectListView(LoginRequiredMixin, ListView):
+class CollectionListView(LoginRequiredMixin, ListView):
     template_name = "projects/list.html"
-    model = Project
+    model = Collection
 
     def get_queryset(self):
-        return Project.objects.filter(members=self.request.user)
+        return Collection.objects.filter(members=self.request.user)
 
 
-class ProjectDetailView(LoginRequiredMixin, DetailView):
-    model = Project
+class CollectionDetailView(LoginRequiredMixin, DetailView):
+    model = Collection
     template_name = "projects/detail.html"
 
     def get_queryset(self):
-        return Project.objects.filter(members=self.request.user)
+        return Collection.objects.filter(members=self.request.user)
 
 
-class ProjectCreateView(LoginRequiredMixin, CreateView):
-    model = Project
+class CollectionCreateView(LoginRequiredMixin, CreateView):
+    model = Collection
     template_name = "projects/create.html"
     fields = [
-        "name",
+        "title",
         "description",
-        "members",
     ]
 
     def get_success_url(self) -> str:

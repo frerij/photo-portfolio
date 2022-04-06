@@ -1,11 +1,11 @@
 from django.contrib import admin
-from tasks.models import Task
+from tasks.models import Image
 
 # Register your models here.
 
 
-class TaskAdmin(admin.ModelAdmin):
+class ImageAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(Task, TaskAdmin)
+admin.site.register(Image, ImageAdmin)
