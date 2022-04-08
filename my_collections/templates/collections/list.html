@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div>
+        {% if user.is_staff %}
+            <a href="{% url 'create_collection' %}">Create a New Collection</a>
+        {% endif %}
+    </div>
+    <div class="covers">
+        {% for collection in collection_list %}
+        <div class="img_wrap">
+            <a href="{% url 'show_collection' collection.pk %}"><img class="cover_image "src="{{ collection.cover_image }}"alt="another picture">
+                <p class="cover_title">{{ collection.title }}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}

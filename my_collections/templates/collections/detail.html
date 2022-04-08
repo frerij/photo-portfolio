@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load markdownify %}
+
+{% block content %}
+
+<div class="container">
+    <div>
+        <h2>{{ collection.title }}</h2>
+    </div>
+    {% if user.is_staff %}
+    <p><a href="{% url 'create_image' %}">Add an image</a></p>
+    {% endif %}
+    <div class="collection_images">
+        {% for image in collection.images.all %}
+        <div class="image_wrap">
+            <img class="images" src="{{ image.img_link }}" alt="another picture">
+            <ul class="image_text">
+                <li>{{ image.title }}</li>
+                <li>{{ image.date_taken }}</li>
+                <li>{{ image.description }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}

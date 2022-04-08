@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="image_form">
+  <h2>Add an image</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add to collection</button>
+  </form>
+</div>
+{% endblock content %}

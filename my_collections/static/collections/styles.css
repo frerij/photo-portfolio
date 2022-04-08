@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'coffekanregular';
+    src: url('./assets/fonts/coffekanregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kenokylight';
+    src: url('./assets/fonts/kenokylight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./assets/fonts/raleway-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./assets/fonts/raleway-light-webfont.woff') format('woff');
+    font-weight: light;
+    font-style: normal;
+
+}
+
+
+html,
+body {
+    background-color: whitesmoke;
+
+}
+
+
+h1 {
+    color: black;
+    font-family: 'kenokylight';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 6rem;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+h2 {
+    color: black;
+    font-family: 'kenokylight';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+.page_container {
+    min-height: 100vh;
+}
+
+.header,
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'kenokylight';
+    text-align: center;
+
+}
+
+div img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin: 2em;
+
+    display: inline-block;
+    transition: 0.5s ease-in-out;
+}
+
+
+.quote {
+    color: #93abb5;
+    font-family: 'kenokylight';
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 5em;
+}
+
+.author {
+    color: black;
+    font-family: 'coffekan';
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+.cover_title {
+    color: black;
+    font-family: 'kenokylight';
+    font-size: 2rem;
+}
+
+.cover_image:hover {
+    backdrop-filter: blur(10px);
+    filter: blur(4px);
+    transition: 0.5s ease-in-out;
+}
+
+
+a {
+    font-family: 'raleway';
+
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    font-family: 'raleway';
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #b3c4cb;
+    transition: color 0.3s;
+}
+
+nav {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    margin-bottom: auto;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item a {
+    font-family: 'kenokylight';
+    font-size: 2.25rem;
+    text-decoration: none;
+    transition: color 0.5s;
+
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.nav-item a.active {
+    color: #b3c4cb;
+    text-decoration: line-through;
+}
+
+.about {
+    font-family: 'raleway';
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 2em;
+}
+
+.signature {
+    list-style-type: none;
+    font-family: 'coffekan';
+    color: #93abb5;
+    font-size: 2.5rem;
+    margin-left: 20rem;
+}
+
+.collection_images,
+.covers {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+.image_wrap {
+    max-width: 400px;
+
+}
+
+.cover_image,
+.images {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.login_form,
+.signup_form,
+.collection_form,
+.image_form {
+    font-family: 'raleway';
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 400px;
+    padding: 2em;
+}

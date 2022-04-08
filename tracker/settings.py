@@ -34,8 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
-    "projects.apps.ProjectsConfig",
-    "tasks.apps.TasksConfig",
+    "my_collections.apps.MyCollectionsConfig",
+    "images.apps.ImagesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -132,4 +132,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MARKDOWNIFY = {"default": {"BLEACH": False}}
 
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "login"
+LOGOUT_REDIRECT_URL = "home"

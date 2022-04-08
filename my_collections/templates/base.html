@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'collections/styles.css' %}">
+    <title>Gallery Alpha</title>
+</head>
+
+<body class="home_bg">
+    <header>
+        <div class="header">
+        <nav class="navbar">
+            <a href="{% url 'home' %}"><h1>Here onward</h1></a>
+            <ul class="nav-links">
+                {% url 'list_collections' as collections_url %}
+                {% url 'about_page' as about_url %}
+                {% url 'login' as login_url %}
+                {% url 'signup' as signup_url %}
+                {% if user.is_authenticated %}
+                
+                <li class="nav-item"> <a href="{% url 'list_collections' %}" {% if request.path == collections_url %} class="active" {% endif %}>Collections</a></li>
+                <li class="nav-item"> <a href="{% url 'about_page' %}" {% if request.path == about_url %} class="active" {% endif %}>About</a></li>
+                <li class="nav-item"> <a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"> <a href="{% url 'list_collections' %}" {% if request.path == collections_url %} class="active" {% endif %}>Collections</a></li>
+                <li class="nav-item"> <a href="{% url 'about_page' %}" {% if request.path == about_url %} class="active" {% endif %}>About</a></li>
+                <li class="nav-item"> <a href="{% url 'login' %}" {% if request.path == login_url %} class="active" {%endif %}>Login</a></li>
+                <li class="nav-item"> <a href="{% url 'signup' %}" {% if request.path == signup_url %} class="active" {%endif %}>Signup</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <hr>
+    <main>
+        <div class="page_container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
+</body>
+<footer>
+    <div>
+        <p>
+            Thanks for visiting
+        </p>
+    </div>
+</footer>
+
+</html>
